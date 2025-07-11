@@ -51,12 +51,10 @@ useEffect(() => {
       <ul className={`nav-links ${isNavOpen ? 'active' : ''}`}>
         <li><a href="#home" onClick={() => setIsNavOpen(false)}>Home</a></li>
         <li><a href="#about" onClick={() => setIsNavOpen(false)}>About</a></li>
-        <li><a href="#resume" onClick={() => setIsNavOpen(false)}>Resume</a></li>
-        <li><a href="#services" onClick={() => setIsNavOpen(false)}>Services</a></li>
         <li><a href="#skills" onClick={() => setIsNavOpen(false)}>Skills</a></li>
         <li><a href="#projects" onClick={() => setIsNavOpen(false)}>Projects</a></li>
-        <li><a href="#blog" onClick={() => setIsNavOpen(false)}>My Blog</a></li>
-        <li><a href="#contact" onClick={() => setIsNavOpen(false)}>Contact</a></li>
+        <li><a href="#experience" onClick={() => setIsNavOpen(false)}>Experience</a></li>
+        <li><a href="#education" onClick={() => setIsNavOpen(false)}>Education</a></li>
       </ul>
       <div className={`menu-overlay ${isNavOpen ? 'active' : ''}`} onClick={() => setIsNavOpen(false)}></div>
     </nav>
