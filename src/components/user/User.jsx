@@ -77,7 +77,7 @@ useEffect(() => {
 
       <div className="hero-right">
         <div className="profile-img-container">
-          <img src='Profile.jpg' alt="Profile" className="profile-img" />
+          <img src="Profile.jpg" alt="Profile" className="profile-img" />
         </div>
       </div>
     </div>
