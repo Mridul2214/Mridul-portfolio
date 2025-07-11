@@ -71,9 +71,7 @@ const Contact = () => {
         </div>
 
         <div className="contact-right-illustration">
-          <img
-            src="contact.png"
-            alt="Contact Illustration"
+<img src={`${import.meta.env.BASE_URL}contact.png`} alt="Contact" 
             className="contact-illustration-image"
           />
         </div>
