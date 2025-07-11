@@ -12,13 +12,13 @@ const ProjectCards = () => {
       title: "Blood Donor🩸",
       description: "🩸 BloodConnect is a fast, accessible platform connecting blood donors with recipients. Users can register, request blood, and find nearby blood banks. With real-time updates and verified profiles, it ensures quick, reliable responses in emergencies—bringing communities together to save lives.",
       tech: ["React", "nodejs", "expressjs", "MongoDb"],
-      imageUrl: "/bd.png"
+      imageUrl: "bd.png"
     },
     {
       title: "E-learn📚",
       description: "📚 E-Learn Android Java Project is a streamlined e-learning platform for colleges, featuring three modules: Principal, Faculty, and Student. Principals manage registrations and approvals, faculty share materials and host live classes, and students access resources and interact with instructors. The system centralizes academic tasks, enhances communication, and improves educational efficiency through a secure and user-friendly interface.",
       tech: ["Java", "PHP", "MySQL"],
-      imageUrl: "/el.png"
+      imageUrl: "el.png"
     },
     {
       title: "Bridge Connect🤝",
