@@ -3,7 +3,7 @@ import './User.css';
 import { FaLinkedinIn, FaGithub, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 
-const imageUrl = `${import.meta.env.BASE_URL}Profile.jpg`;
+const imageUrl = '/Profile.jpg';
 const resumePath = '/My Resume.pdf';
 
 const User = () => {
