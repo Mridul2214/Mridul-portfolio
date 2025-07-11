@@ -1,0 +1,191 @@
+/* ===== ABOUT SECTION ===== */
+.about-bg {
+  background-image: url('/aboutimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+   margin-bottom: -40px !important; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Changed to 100vh to fill screen */
+  color: white;
+  position: relative;
+  animation: slideInFromLeft 3s ease-out forwards;
+  opacity: 0;
+  transform: translateX(100px);
+  box-sizing: border-box; /* Ensures padding is included in height */
+}
+
+/* Dark overlay with gradient for better readability */
+.about-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 0;
+}
+
+/* Content container */
+.about-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px; /* Increased max-width */
+  width: 90%; /* Takes 90% of screen width */
+  /* padding: 40px; */
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: 20px auto; /* Centering */
+  /* padding-bottom: 40px; */
+}
+
+/* Heading with orange dot */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1ab1ed;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.about-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #1ab1ed, transparent);
+  border-radius: 2px;
+}
+
+/* .dot-orange {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff7b00;
+  border-radius: 50%;
+  margin-left: 15px;
+  animation: pulse 2s infinite;
+} */
+
+/* Paragraph text */
+.about-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* Animation keyframes */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== DESKTOP VIEW (768px+) ===== */
+@media (min-width: 768px) {
+  .about-bg {
+    min-height: auto !important; /* Remove fixed height */
+    padding-bottom: 40px !important;
+    margin-bottom: -30px !important; /* Stronger pull on mobile */
+  }
+  .about-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 30px !important;
+  }
+
+  .about-heading {
+    font-size: 3.5rem;
+  }
+
+  .about-paragraph {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===== LARGE DESKTOP (1200px+) ===== */
+@media (min-width: 1200px) {
+  .about-content {
+    margin-left: 15%;
+    padding: 60px;
+  }
+}
+
+/* ===== MOBILE VIEW (max-width: 768px) ===== */
+@media (max-width: 767px) {
+  .about-bg {
+    padding-top: 30px; /* Reduced from 40px */
+    min-height: calc(100vh - 30px); /* Adjust height to compensate */
+    margin-top: -50px; /* Pull section upward */
+  }
+
+  .about-content {
+    padding: 20px 15px;
+    margin-top: -20px; /* Further adjust content position */
+    padding-bottom: 60px; /* Reduced from 90px */
+  }
+
+  .about-heading {
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+}
+
+/* ===== SMALL MOBILE (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .about-content {
+    padding: 25px 15px;
+  }
+    .about-bg {
+    margin-bottom: -40px !important; /* Even stronger pull */
+    padding-bottom: 40px !important;
+  }
+
+  .about-heading {
+    font-size: 1.8rem;
+  }
+
+  .about-paragraph {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,205 @@
+.skills-scroll-section {
+          background-color: #000000; /* Solid black background for the section */
+          padding: 50px 20px; /* Generous padding */
+          color: #212121; /* Default text color for this section (dark) */
+          font-family: 'Inter', sans-serif; /* Consistent font family */
+          text-align: center;
+          overflow: hidden; /* Hide scrollbar for smooth effect */
+        }
+
+        /* Section Header */
+        .skills-header {
+          margin-bottom: 50px;
+        }
+
+        .section-title {
+          font-size: 3.5rem;
+          color: #1ab1ed; /* Blue theme color */
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+
+        /* Wrapper for scroll container and arrows */
+        .skills-scroll-wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 1200px; /* Max width for the entire scroll area */
+          margin: 0 auto;
+          padding: 0 40px; /* Padding for arrows */
+        }
+
+        /* Scroll Arrows */
+        .scroll-arrow {
+          background-color: #616161; /* Gray background for arrows */
+          border: none;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          position: absolute;
+          z-index: 5; /* Ensure arrows are on top */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-arrow:hover {
+          background-color: #424242; /* Darker gray on hover */
+          transform: scale(1.05);
+        }
+
+        .scroll-arrow-left {
+          left: 0;
+        }
+
+        .scroll-arrow-right {
+          right: 0;
+        }
+
+        .scroll-arrow svg {
+          width: 24px;
+          height: 24px;
+          color: white; /* White arrow icon */
+        }
+
+        /* Skills Scroll Container */
+        .skills-scroll-container {
+          width: 100%;
+          overflow-x: hidden; /* Hide horizontal scrollbar, animation handles movement */
+          padding-bottom: 20px; /* Space for potential scrollbar */
+          -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+          scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+
+        .skills-scroll-container::-webkit-scrollbar {
+          display: none; /* Hide scrollbar for Chrome, Safari, Opera */
+        }
+
+        /* Skills Scroll Content (the actual scrolling track) */
+        .skills-scroll-content {
+          display: flex; /* Arrange cards in a row */
+          gap: 25px; /* Space between skill cards */
+          padding: 10px; /* Padding around cards inside scroll area */
+          width: max-content; /* Ensure content takes minimum width needed */
+          /* CSS animation for continuous loop */
+          animation: scroll-loop 60s linear infinite; /* Adjusted duration for smoother loop */
+        }
+
+        /* Individual Skill Card */
+        .skill-card {
+          flex-shrink: 0; /* Prevent cards from shrinking */
+          width: 180px; /* Fixed width for each card as in screenshot */
+          height: 180px; /* Fixed height for each card as in screenshot */
+          background-color: #FFFFFF; /* White background for cards */
+          border-radius: 12px; /* Rounded corners */
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center; /* Center content vertically */
+          padding: 20px;
+          box-sizing: border-box;
+          color: #212121; /* Dark text color */
+        }
+
+        .skill-card:hover {
+          transform: translateY(-5px); /* Lift effect */
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+        }
+
+        /* Skill Logo */
+        .skill-logo {
+          width: 80px; /* Larger logo size as in screenshot */
+          height: 80px;
+          object-fit: contain;
+          margin-bottom: 15px;
+        }
+
+        /* Skill Name */
+        .skill-name {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: #212121; /* Dark text for skill name */
+          margin: 0;
+          text-align: center;
+        }
+
+        /* Keyframe Animation for continuous horizontal scrolling loop */
+        @keyframes scroll-loop {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%); /* Scrolls exactly half its width for seamless loop */
+          }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+          .skills-scroll-section {
+            padding: 40px 20px; /* Reduced top padding for mobile */
+          }
+          .section-title {
+            font-size: 3rem;
+          }
+          .skills-scroll-wrapper {
+            padding: 0 20px; /* Adjust padding for arrows */
+          }
+          .scroll-arrow {
+            width: 40px;
+            height: 40px;
+          }
+          .scroll-arrow svg {
+            width: 20px;
+            height: 20px;
+          }
+          .skill-card {
+            width: 160px;
+            height: 160px;
+          }
+          .skill-logo {
+            width: 70px;
+            height: 70px;
+          }
+          .skill-name {
+            font-size: 1.1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .skills-scroll-section {
+            padding: 0.01px 15px 35px;
+            padding-bottom: 110px; /* Further reduced top padding for smaller mobile */
+          }
+          .section-title {
+            font-size: 2.5rem;
+          }
+          .skills-scroll-wrapper {
+            padding: 0 10px;
+          }
+          .scroll-arrow {
+            width: 35px;
+            height: 35px;
+          }
+          .scroll-arrow svg {
+            width: 18px;
+            height: 18px;
+          }
+          .skill-card {
+            width: 140px;
+            height: 140px;
+          }
+          .skill-logo {
+            width: 60px;
+            height: 60px;
+          }
+          .skill-name {
+            font-size: 1rem;
+          }
+        }

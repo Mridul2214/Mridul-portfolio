@@ -1,0 +1,119 @@
+/* Scrolltop.css */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Button styling */
+.scroll-button {
+  /* Visual styling */
+  background: linear-gradient(135deg, #67e1ff 0%, #6797ff 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* Shadow and depth */
+  box-shadow: 0 4px 20px rgba(103, 225, 255, 0.3);
+  
+  /* Flex centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Animation */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Accessibility */
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effects */
+.scroll-button:hover {
+  transform: translateY(-0.25rem) scale(1.05);
+  box-shadow: 0 6px 24px rgba(103, 225, 255, 0.4);
+  background: linear-gradient(135deg, #6797ff 0%, #6771ff 100%);
+}
+
+/* Active/click effect */
+.scroll-button:active {
+  transform: translateY(0.125rem) scale(0.98);
+}
+
+/* Ripple effect for modern browsers */
+.scroll-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.scroll-button:focus:not(:active)::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+/* Entrance animation */
+.scroll-to-top {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+  
+  .scroll-button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-button,
+  .scroll-to-top {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .scroll-button:hover {
+    transform: none !important;
+  }
+}

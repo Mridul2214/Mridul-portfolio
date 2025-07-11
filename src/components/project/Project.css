@@ -1,0 +1,303 @@
+/* Base styles */
+.project-section {
+  padding: 100px 20px;
+  color: #E0E0E0;
+  font-family: 'Inter', sans-serif;
+}
+
+.project-section-heading {
+  font-size: 3rem;
+  color: #1ab1ed;
+  margin-bottom: 60px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Project card container */
+.project-item {
+  position: relative;
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-item.visible {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.project-item.visible:nth-child(1) { animation-delay: 0.1s; }
+.project-item.visible:nth-child(2) { animation-delay: 0.3s; }
+.project-item.visible:nth-child(3) { animation-delay: 0.5s; }
+
+/* Image container with perfect fitting */
+.project-image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.project-item-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.project-item:hover .project-item-image {
+  transform: scale(1.05);
+}
+
+.project-item-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Details overlay */
+/* .project-details-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 27, 30, 0.95);
+  backdrop-filter: blur(5px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.project-details-overlay.active {
+  bottom: 0;
+}
+
+/* .project-details-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.2s;
+} */
+
+.project-details-overlay.active .project-details-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .project-item-description {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+} */
+
+/* Tech stack section */
+.tech-stack-section {
+  margin-top: auto;
+}
+
+.tech-stack-section h4 {
+  color: #1ab1ed;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  background: rgba(26, 177, 237, 0.15);
+  color: #1ab1ed;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(26, 177, 237, 0.5);
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .project-item {
+    height: 350px;
+  }
+  
+  /* Keep original mobile behavior */
+  .project-details-overlay.active {
+    bottom: 0;
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    height: 300px;
+  }
+  
+  .project-details-overlay {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-details-overlay {
+    padding: 25px;
+  }
+  
+  .project-item-title {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-section {
+    padding: 80px 15px;
+    padding-bottom: 110px;
+  }
+  
+  .project-item {
+    height: 300px;
+  }
+  
+  .project-item-description {
+    font-size: 1rem;
+  }
+  
+  .tech-tag {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1025px) {
+  .project-item:hover {
+    height: 500px; /* Increased height on hover */
+  }
+  
+  .project-item:hover .project-details-overlay {
+    bottom: 0;
+    height: auto; /* Allow overlay to expand */
+  }
+  
+  .project-item:hover .project-item-image {
+    transform: none; /* Remove scale effect since we're expanding */
+  }
+  
+  .project-item:hover .project-item-title {
+    opacity: 0; /* Hide title when details are shown */
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* Improved details overlay */
+.project-details-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 27, 30, 0.98); /* More opaque background */
+  backdrop-filter: blur(5px);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Add scroll if content is too long */
+}
+
+/* Better content spacing */
+.project-details-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.2s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item-description {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px; /* Space for scrollbar */
+}
+
+/* Scrollbar styling */
+.project-item-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-item-description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.project-item-description::-webkit-scrollbar-thumb {
+  background: rgba(26, 177, 237, 0.5);
+  border-radius: 3px;
+}
+
+/* Tech stack stays at bottom */
+.tech-stack-section {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
