@@ -72,7 +72,7 @@ const Contact = () => {
 
         <div className="contact-right-illustration">
           <img
-            src="/contact.png"
+            src="contact.png"
             alt="Contact Illustration"
             className="contact-illustration-image"
           />
